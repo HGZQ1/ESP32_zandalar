@@ -1,0 +1,11 @@
+接线IO口
+MAX9814
+    AR   ----  GND
+    OUT  ----  GPIO4
+    GAIN ----  悬空
+
+MAX89357
+    LRC  ----  GPIO14
+    BCLK ----  GPIO15
+    DIN  ----  GPIO7
+    GAIN ---- 悬空
