@@ -1,0 +1,2 @@
+# ESP32_zandalar
+基于ESP32_S3Arduion接入在线deepseek的语音交互机器人框架
