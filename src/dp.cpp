@@ -4,12 +4,12 @@
 #include <baiduApi.h>
 #include <dp.h>
 
-const char *apiUrl = "https://api.deepseek.com/v1/chat/completions";
-const char *apiKey = "sk-e4c6ed70312a4b91b3dde8e4b36a8a8d";
+const char *apiUrl = "https://api.deepseek.com/v1/chat/completions";//api接口
+const char *apiKey = "";//api密钥
 
 
-//String userInput = parse_baidu_result(result);
-String userInput = "";//用户直接通过串口输入内容，测试用，实际使用需注释掉
+
+String userInput = "";
 void parseResponse(const String &response);
 void sendRequest(String userInput);
 void setup();
@@ -21,8 +21,9 @@ void loop();
  */
 void start_Recording1(){
     if (Serial.available())
-    {
-        userInput = Serial.readStringUntil('\n');
+    {   
+        //userInput = parseBaiduResponse("");// 获取百度语音识别结果
+        userInput = Serial.readStringUntil('\n');//读取用户输入，直到换行符,串口直接输入提示词
         userInput.trim();
         Serial.println("用户输入: " + userInput);
 

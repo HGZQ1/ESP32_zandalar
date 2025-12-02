@@ -5,8 +5,8 @@
 #include <ArduinoJson.h>
 #include "base64.h"
 //百度api密钥
-String client_id = "rrAyqMv7xPoVj0tF5xT5hNi3";//"75SVJysKhrI6foa784krc6lQ";//"rrAyqMv7xPoVj0tF5xT5hNi3";
-String client_secret = "67omRsIj7fCDHsYeuZvWmvoD8aCyNJUU";//"e7VOvxACrU4xZJIRh6o8CyaYgfbXyseF";//"67omRsIj7fCDHsYeuZvWmvoD8aCyNJUU";
+String client_id = "";
+String client_secret = "";
 String access_token="";
 
 // 获取token并解析JSON提取access_token
@@ -82,7 +82,7 @@ void speechSynthesis(String inputText) {
     http.end();
 }
 
-void parseBaiduResponse(const String& payload) {
+String parseBaiduResponse(const String& payload) {
     JsonDocument  doc;
     DeserializationError error = deserializeJson(doc, payload);
 
@@ -130,7 +130,7 @@ void sendVoiceToBaidu(uint8_t* adc_data, size_t data_len) {
     if (httpCode > 0) {
         if (httpCode == HTTP_CODE_OK) {
             String payload = https.getString();
-            parseBaiduResponse(payload); // 你原来的处理函数
+            parseBaiduResponse(payload); // 显式转换为String类型 // 你原来的处理函数
         } else {
             Serial.printf("服务器响应码不是200: %d\n", httpCode);
         }

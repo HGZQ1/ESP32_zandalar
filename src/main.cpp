@@ -9,10 +9,10 @@
 #include "baiduApi.h"
 #include "dp.h"
 
-#define key 18      
+#define key 18      //按键引脚
 
-String wifi_ssid="zandaer";//WiFi名称
-String wifi_pass="123456788";//WiFi密码
+String wifi_ssid="";//WiFi名称
+String wifi_pass="";//WiFi密码
 void setup() {
 
     Serial.begin(115200);
@@ -45,7 +45,7 @@ void loop() {
     //if(digitalRead(key)==0) //按键按下
     //{
         //start_Recording();
-        //sendVoiceToBaidu((uint8_t *)adc_data,32000);
+        //sendVoiceToBaidu((uint8_t *)adc_data,32000);//加入了麦克风再用
         //while (!digitalRead(key));
         //Serial.printf("结束录音\r\n");
     //}
