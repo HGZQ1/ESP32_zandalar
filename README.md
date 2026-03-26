@@ -1,4 +1,5 @@
-# ESP32_zandalar
+# ESP32_zandalar 
+
 基于ESP32_S3Arduion接入在线deepseek的语音交互机器人框架
 后面可以基于该框架加入唤醒词，接入其他语言大模型，智能家居控制，智能桌面宠物等等
 该框架目前仅实现接入deepseek大模型，并进行语音交互，通过百度语言大模型TTS和STT进行音频和文本的相互转写
